@@ -1,23 +1,11 @@
 import { useState } from "react"
 import Porta from "../components/Porta"
-import PortaModel from '../model/porta'
 import criarPortas, { atualizarPortas } from "../functions/portas"
 
-export default function Home() {
-  const [portas, setPortas] = useState(criarPortas(4, 2))
-
-  function renderizarPortas() {
-    return portas.map(porta => {
-      return <Porta key={porta.numero} 
-        value={porta} 
-        onChange={novaPorta => setPortas(
-            atualizarPortas(portas, novaPorta))} />
-    })
-  }
-    
+export default function Home() {    
   return (
     <div style={{display: "flex"}}>
-      {renderizarPortas()}
+      <h1>Início do jogo</h1>
     </div>
   )
 }
